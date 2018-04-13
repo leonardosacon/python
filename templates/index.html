@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block branding %}<img src="{{ MEDIA_URL }}logo.png" width="120"/>{% endblock %}
+
+{% if lista_zona %}
+    <ul>
+    {% for question in lista_zona %}
+        <li><a href="/zona/{{ question.id }}/">{{ question.descricao }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No zona are available.</p>
+{% endif %}
+</body>
+</html>
